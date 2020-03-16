@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\OpenCvSharp4.runtime.win.4.1.1.20191216\build\net\OpenCvSharp4.runtime.win.props" Condition="Exists('packages\OpenCvSharp4.runtime.win.4.1.1.20191216\build\net\OpenCvSharp4.runtime.win.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{796E5085-01D1-43C3-8D02-BBBDC592959E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VisionProcessor</RootNamespace>
+    <AssemblyName>VisionProcessor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>packages\OpenCvSharp4.4.1.1.20191216\lib\net40\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Blob, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>packages\OpenCvSharp4.4.1.1.20191216\lib\net40\OpenCvSharp.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>packages\OpenCvSharp4.4.1.1.20191216\lib\net40\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.UserInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>packages\OpenCvSharp4.4.1.1.20191216\lib\net40\OpenCvSharp.UserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="QGRUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\QGRUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DialogBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBase.Designer.cs">
+      <DependentUpon>DialogBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgBlur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgBlur.Designer.cs">
+      <DependentUpon>dlgBlur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgCanny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgCanny.Designer.cs">
+      <DependentUpon>dlgCanny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgContour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgContour.Designer.cs">
+      <DependentUpon>dlgContour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgHoughCircle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgHoughCircle.Designer.cs">
+      <DependentUpon>dlgHoughCircle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgHoughLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgHoughLine.Designer.cs">
+      <DependentUpon>dlgHoughLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMatchTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgMatchTemplate.Designer.cs">
+      <DependentUpon>dlgMatchTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMorphology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgMorphology.Designer.cs">
+      <DependentUpon>dlgMorphology.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgNormalize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgNormalize.Designer.cs">
+      <DependentUpon>dlgNormalize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgThreshold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgThreshold.Designer.cs">
+      <DependentUpon>dlgThreshold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticObj.cs" />
+    <Compile Include="VisionTestCase.cs" />
+    <Compile Include="VP_Blur.cs" />
+    <Compile Include="VP_Canny.cs" />
+    <Compile Include="VP_Contour.cs" />
+    <Compile Include="VP_EqualizeHist.cs" />
+    <Compile Include="VP_HoughCircle.cs" />
+    <Compile Include="VP_HoughLine.cs" />
+    <Compile Include="VP_MatchTemplate.cs" />
+    <Compile Include="VP_Morphology.cs" />
+    <Compile Include="VP_Normalize.cs" />
+    <Compile Include="VP_Reverse.cs" />
+    <Compile Include="VP_Skeleton.cs" />
+    <Compile Include="VP_Threshold.cs" />
+    <EmbeddedResource Include="DialogBase.resx">
+      <DependentUpon>DialogBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgBlur.resx">
+      <DependentUpon>dlgBlur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgCanny.resx">
+      <DependentUpon>dlgCanny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgContour.resx">
+      <DependentUpon>dlgContour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgHoughCircle.resx">
+      <DependentUpon>dlgHoughCircle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgHoughLine.resx">
+      <DependentUpon>dlgHoughLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMatchTemplate.resx">
+      <DependentUpon>dlgMatchTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMorphology.resx">
+      <DependentUpon>dlgMorphology.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgNormalize.resx">
+      <DependentUpon>dlgNormalize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgThreshold.resx">
+      <DependentUpon>dlgThreshold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\LOGO.ico" />
+    <Content Include="QGRUtility.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\OpenCvSharp4.runtime.win.4.1.1.20191216\build\net\OpenCvSharp4.runtime.win.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\OpenCvSharp4.runtime.win.4.1.1.20191216\build\net\OpenCvSharp4.runtime.win.props'))" />
+  </Target>
+</Project>
