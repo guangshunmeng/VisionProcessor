@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using OpenCvSharp;
 using QGR.Utility;
@@ -14,6 +15,7 @@ namespace VisionProcessor
         Pen[] shapeColors;
         public Form1()
         {
+            QGR.Utility.Splash.Show();
             InitializeComponent();
             roiPen = new Pen(Color.White);
             roiPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
@@ -649,6 +651,12 @@ namespace VisionProcessor
         {
             runVisionCommand(new VP_Reverse(), false);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            QGR.Utility.Splash.Destroy();
+        }
+
         private void mnu_Vision_MatchTemplate_Click(object sender, EventArgs e)
         {
             Rect res;

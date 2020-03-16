@@ -61,6 +61,7 @@
             this.mnu_Vision_EqualizeHist = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Vision_Normalize = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Vision_Blur = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_Vision_Reverse = new System.Windows.Forms.ToolStripMenuItem();
             this.几何变换ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.图像分割ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Vision_Segmentation_Theshold = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,7 +92,6 @@
             this.propValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelImage = new System.Windows.Forms.Panel();
             this.pictureMain = new System.Windows.Forms.PictureBox();
-            this.mnu_Vision_Reverse = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -279,34 +279,41 @@
             this.mnu_Vision_Blur,
             this.mnu_Vision_Reverse});
             this.图像增强ToolStripMenuItem.Name = "图像增强ToolStripMenuItem";
-            this.图像增强ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.图像增强ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.图像增强ToolStripMenuItem.Text = "图像增强";
             // 
             // mnu_Vision_EqualizeHist
             // 
             this.mnu_Vision_EqualizeHist.Name = "mnu_Vision_EqualizeHist";
-            this.mnu_Vision_EqualizeHist.Size = new System.Drawing.Size(180, 22);
+            this.mnu_Vision_EqualizeHist.Size = new System.Drawing.Size(136, 22);
             this.mnu_Vision_EqualizeHist.Text = "直方图均衡";
             this.mnu_Vision_EqualizeHist.Click += new System.EventHandler(this.mnu_Vision_EqualizeHist_Click);
             // 
             // mnu_Vision_Normalize
             // 
             this.mnu_Vision_Normalize.Name = "mnu_Vision_Normalize";
-            this.mnu_Vision_Normalize.Size = new System.Drawing.Size(180, 22);
+            this.mnu_Vision_Normalize.Size = new System.Drawing.Size(136, 22);
             this.mnu_Vision_Normalize.Text = "归一化";
             this.mnu_Vision_Normalize.Click += new System.EventHandler(this.mnu_Vision_Normalize_Click);
             // 
             // mnu_Vision_Blur
             // 
             this.mnu_Vision_Blur.Name = "mnu_Vision_Blur";
-            this.mnu_Vision_Blur.Size = new System.Drawing.Size(180, 22);
+            this.mnu_Vision_Blur.Size = new System.Drawing.Size(136, 22);
             this.mnu_Vision_Blur.Text = "滤波";
             this.mnu_Vision_Blur.Click += new System.EventHandler(this.mnu_Vision_Blur_Click);
+            // 
+            // mnu_Vision_Reverse
+            // 
+            this.mnu_Vision_Reverse.Name = "mnu_Vision_Reverse";
+            this.mnu_Vision_Reverse.Size = new System.Drawing.Size(136, 22);
+            this.mnu_Vision_Reverse.Text = "反相";
+            this.mnu_Vision_Reverse.Click += new System.EventHandler(this.mnu_Vision_Reverse_Click);
             // 
             // 几何变换ToolStripMenuItem
             // 
             this.几何变换ToolStripMenuItem.Name = "几何变换ToolStripMenuItem";
-            this.几何变换ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.几何变换ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.几何变换ToolStripMenuItem.Text = "图像变换";
             // 
             // 图像分割ToolStripMenuItem
@@ -314,7 +321,7 @@
             this.图像分割ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnu_Vision_Segmentation_Theshold});
             this.图像分割ToolStripMenuItem.Name = "图像分割ToolStripMenuItem";
-            this.图像分割ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.图像分割ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.图像分割ToolStripMenuItem.Text = "图像分割";
             // 
             // mnu_Vision_Segmentation_Theshold
@@ -332,7 +339,7 @@
             this.mnu_Vision_Morphology,
             this.mnu_Vision_Skeleton});
             this.形态学ToolStripMenuItem.Name = "形态学ToolStripMenuItem";
-            this.形态学ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.形态学ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.形态学ToolStripMenuItem.Text = "形态学";
             // 
             // mnu_Vision_Dilate
@@ -369,7 +376,7 @@
             this.mnu_Vision_Canny,
             this.mnu_Vision_Contour});
             this.边缘提取ToolStripMenuItem.Name = "边缘提取ToolStripMenuItem";
-            this.边缘提取ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.边缘提取ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.边缘提取ToolStripMenuItem.Text = "边缘提取";
             // 
             // mnu_Vision_Canny
@@ -392,7 +399,7 @@
             this.mnu_Vision_HoughLine,
             this.mnu_Vision_HoughCircle});
             this.几何拟合ToolStripMenuItem.Name = "几何拟合ToolStripMenuItem";
-            this.几何拟合ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.几何拟合ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.几何拟合ToolStripMenuItem.Text = "几何拟合";
             // 
             // mnu_Vision_HoughLine
@@ -415,7 +422,7 @@
             this.mnu_Vision_MatchTemplate,
             this.mnu_Match_Shapes});
             this.mnu_Vision_Match.Name = "mnu_Vision_Match";
-            this.mnu_Vision_Match.Size = new System.Drawing.Size(180, 22);
+            this.mnu_Vision_Match.Size = new System.Drawing.Size(124, 22);
             this.mnu_Vision_Match.Text = "模板匹配";
             // 
             // mnu_Vision_MatchTemplate
@@ -434,7 +441,7 @@
             // mnu_Vision_OCR
             // 
             this.mnu_Vision_OCR.Name = "mnu_Vision_OCR";
-            this.mnu_Vision_OCR.Size = new System.Drawing.Size(180, 22);
+            this.mnu_Vision_OCR.Size = new System.Drawing.Size(124, 22);
             this.mnu_Vision_OCR.Text = "字符识别";
             // 
             // mnu_txtCursorValue
@@ -564,13 +571,6 @@
             this.pictureMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureMain_MouseMove);
             this.pictureMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureMain_MouseUp);
             // 
-            // mnu_Vision_Reverse
-            // 
-            this.mnu_Vision_Reverse.Name = "mnu_Vision_Reverse";
-            this.mnu_Vision_Reverse.Size = new System.Drawing.Size(180, 22);
-            this.mnu_Vision_Reverse.Text = "反相";
-            this.mnu_Vision_Reverse.Click += new System.EventHandler(this.mnu_Vision_Reverse_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -581,6 +581,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "图像处理工具";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
