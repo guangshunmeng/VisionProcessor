@@ -10,7 +10,7 @@ namespace VisionProcessor
     /// <summary>
     /// mode : TemplateMatchModes
     /// </summary>
-    class VP_MatchTemplate : VisionTestCase
+    public class VP_MatchTemplate : VisionTestCase
     {
         TemplateMatchModes mode;
         Mat templ;

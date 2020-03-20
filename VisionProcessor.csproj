@@ -76,6 +76,12 @@
     <Compile Include="DialogBase.Designer.cs">
       <DependentUpon>DialogBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="dlgAffineTransform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgAffineTransform.Designer.cs">
+      <DependentUpon>dlgAffineTransform.cs</DependentUpon>
+    </Compile>
     <Compile Include="dlgBlur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,8 +158,12 @@
     <Compile Include="VP_Reverse.cs" />
     <Compile Include="VP_Skeleton.cs" />
     <Compile Include="VP_Threshold.cs" />
+    <Compile Include="VP_TransformAffine.cs" />
     <EmbeddedResource Include="DialogBase.resx">
       <DependentUpon>DialogBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgAffineTransform.resx">
+      <DependentUpon>dlgAffineTransform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dlgBlur.resx">
       <DependentUpon>dlgBlur.cs</DependentUpon>

@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "格式",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             "宽度",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
             "高度",
             ""}, -1);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -92,6 +92,7 @@
             this.propValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelImage = new System.Windows.Forms.Panel();
             this.pictureMain = new System.Windows.Forms.PictureBox();
+            this.mnu_Vision_Affine = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -226,35 +227,35 @@
             // mnu_View_Entire
             // 
             this.mnu_View_Entire.Name = "mnu_View_Entire";
-            this.mnu_View_Entire.Size = new System.Drawing.Size(100, 22);
+            this.mnu_View_Entire.Size = new System.Drawing.Size(180, 22);
             this.mnu_View_Entire.Text = "完整";
             this.mnu_View_Entire.Click += new System.EventHandler(this.mnu_View_Entire_Click);
             // 
             // mnu_View_Origin
             // 
             this.mnu_View_Origin.Name = "mnu_View_Origin";
-            this.mnu_View_Origin.Size = new System.Drawing.Size(100, 22);
+            this.mnu_View_Origin.Size = new System.Drawing.Size(180, 22);
             this.mnu_View_Origin.Text = "原图";
             this.mnu_View_Origin.Click += new System.EventHandler(this.mnu_View_Origin_Click);
             // 
             // mnu_View_ZoomIn
             // 
             this.mnu_View_ZoomIn.Name = "mnu_View_ZoomIn";
-            this.mnu_View_ZoomIn.Size = new System.Drawing.Size(100, 22);
+            this.mnu_View_ZoomIn.Size = new System.Drawing.Size(180, 22);
             this.mnu_View_ZoomIn.Text = "放大";
             this.mnu_View_ZoomIn.Click += new System.EventHandler(this.mnu_View_ZoomIn_Click);
             // 
             // mnu_View_ZoonOut
             // 
             this.mnu_View_ZoonOut.Name = "mnu_View_ZoonOut";
-            this.mnu_View_ZoonOut.Size = new System.Drawing.Size(100, 22);
+            this.mnu_View_ZoonOut.Size = new System.Drawing.Size(180, 22);
             this.mnu_View_ZoonOut.Text = "缩小";
             this.mnu_View_ZoonOut.Click += new System.EventHandler(this.mnu_View_ZoonOut_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(97, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // 视觉算法ToolStripMenuItem
             // 
@@ -279,7 +280,7 @@
             this.mnu_Vision_Blur,
             this.mnu_Vision_Reverse});
             this.图像增强ToolStripMenuItem.Name = "图像增强ToolStripMenuItem";
-            this.图像增强ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.图像增强ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.图像增强ToolStripMenuItem.Text = "图像增强";
             // 
             // mnu_Vision_EqualizeHist
@@ -312,8 +313,10 @@
             // 
             // 几何变换ToolStripMenuItem
             // 
+            this.几何变换ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_Vision_Affine});
             this.几何变换ToolStripMenuItem.Name = "几何变换ToolStripMenuItem";
-            this.几何变换ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.几何变换ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.几何变换ToolStripMenuItem.Text = "图像变换";
             // 
             // 图像分割ToolStripMenuItem
@@ -321,7 +324,7 @@
             this.图像分割ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnu_Vision_Segmentation_Theshold});
             this.图像分割ToolStripMenuItem.Name = "图像分割ToolStripMenuItem";
-            this.图像分割ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.图像分割ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.图像分割ToolStripMenuItem.Text = "图像分割";
             // 
             // mnu_Vision_Segmentation_Theshold
@@ -339,7 +342,7 @@
             this.mnu_Vision_Morphology,
             this.mnu_Vision_Skeleton});
             this.形态学ToolStripMenuItem.Name = "形态学ToolStripMenuItem";
-            this.形态学ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.形态学ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.形态学ToolStripMenuItem.Text = "形态学";
             // 
             // mnu_Vision_Dilate
@@ -376,7 +379,7 @@
             this.mnu_Vision_Canny,
             this.mnu_Vision_Contour});
             this.边缘提取ToolStripMenuItem.Name = "边缘提取ToolStripMenuItem";
-            this.边缘提取ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.边缘提取ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.边缘提取ToolStripMenuItem.Text = "边缘提取";
             // 
             // mnu_Vision_Canny
@@ -399,7 +402,7 @@
             this.mnu_Vision_HoughLine,
             this.mnu_Vision_HoughCircle});
             this.几何拟合ToolStripMenuItem.Name = "几何拟合ToolStripMenuItem";
-            this.几何拟合ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.几何拟合ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.几何拟合ToolStripMenuItem.Text = "几何拟合";
             // 
             // mnu_Vision_HoughLine
@@ -422,7 +425,7 @@
             this.mnu_Vision_MatchTemplate,
             this.mnu_Match_Shapes});
             this.mnu_Vision_Match.Name = "mnu_Vision_Match";
-            this.mnu_Vision_Match.Size = new System.Drawing.Size(124, 22);
+            this.mnu_Vision_Match.Size = new System.Drawing.Size(180, 22);
             this.mnu_Vision_Match.Text = "模板匹配";
             // 
             // mnu_Vision_MatchTemplate
@@ -441,7 +444,7 @@
             // mnu_Vision_OCR
             // 
             this.mnu_Vision_OCR.Name = "mnu_Vision_OCR";
-            this.mnu_Vision_OCR.Size = new System.Drawing.Size(124, 22);
+            this.mnu_Vision_OCR.Size = new System.Drawing.Size(180, 22);
             this.mnu_Vision_OCR.Text = "字符识别";
             // 
             // mnu_txtCursorValue
@@ -529,9 +532,9 @@
             this.lstProperties.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstProperties.HideSelection = false;
             this.lstProperties.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
+            listViewItem7,
+            listViewItem8,
+            listViewItem9});
             this.lstProperties.Location = new System.Drawing.Point(0, 0);
             this.lstProperties.Name = "lstProperties";
             this.lstProperties.Size = new System.Drawing.Size(202, 124);
@@ -567,9 +570,17 @@
             this.pictureMain.TabIndex = 1;
             this.pictureMain.TabStop = false;
             this.pictureMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureMain_Paint);
+            this.pictureMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureMain_MouseClick);
             this.pictureMain.MouseLeave += new System.EventHandler(this.pictureMain_MouseLeave);
             this.pictureMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureMain_MouseMove);
             this.pictureMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureMain_MouseUp);
+            // 
+            // mnu_Vision_Affine
+            // 
+            this.mnu_Vision_Affine.Name = "mnu_Vision_Affine";
+            this.mnu_Vision_Affine.Size = new System.Drawing.Size(180, 22);
+            this.mnu_Vision_Affine.Text = "仿射变换";
+            this.mnu_Vision_Affine.Click += new System.EventHandler(this.mnu_Vision_Affine_Click);
             // 
             // Form1
             // 
@@ -615,7 +626,6 @@
         private System.Windows.Forms.ColumnHeader propName;
         private System.Windows.Forms.ColumnHeader propValue;
         private System.Windows.Forms.Panel panelImage;
-        private System.Windows.Forms.PictureBox pictureMain;
         private System.Windows.Forms.ToolStripMenuItem 视图ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnu_View_Entire;
         private System.Windows.Forms.ToolStripMenuItem mnu_View_Origin;
@@ -656,6 +666,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnu_Vision_MatchTemplate;
         private System.Windows.Forms.ToolStripMenuItem mnu_Match_Shapes;
         private System.Windows.Forms.ToolStripMenuItem mnu_Vision_Reverse;
+        private System.Windows.Forms.ToolStripMenuItem mnu_Vision_Affine;
+        internal System.Windows.Forms.PictureBox pictureMain;
     }
 }
 

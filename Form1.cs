@@ -52,6 +52,10 @@ namespace VisionProcessor
                 Pens.Turquoise,Pens.WhiteSmoke,Pens.YellowGreen
             };
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            QGR.Utility.Splash.Destroy();
+        }
         private void pictureMain_Paint(object sender, PaintEventArgs e)
         {
             if(scale>0)
@@ -167,7 +171,7 @@ namespace VisionProcessor
                 refreshImage(true);
             }
         }
-        private void refreshImage(bool bReset = false)
+        public void refreshImage(bool bReset = false)
         { 
             pictureMain.Image = StaticObj.getBitmap();
             if (bReset)
@@ -286,6 +290,33 @@ namespace VisionProcessor
         System.Drawing.Point start, end;
         Rectangle selectROI;
         bool bSelect;
+
+        private void pictureMain_MouseClick(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    if (!bSelect)
+                    {
+                        start = new System.Drawing.Point((int)(e.Location.X * scale), (int)(e.Location.Y * scale));
+                        bSelect = true;
+                    }
+                    else
+                    {
+                        bSelect = false;
+                    }
+                    break;
+                case MouseButtons.Right:
+                    if (bSelect)
+                    {
+                        selectROI.Width = 0;
+                        bSelect = false;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
         private void pictureMain_MouseMove(object sender, MouseEventArgs e)
         {
             int x = (int)(e.X * scale);
@@ -311,33 +342,10 @@ namespace VisionProcessor
         }
         private void pictureMain_MouseUp(object sender, MouseEventArgs e)
         {
-            switch(e.Button)
-            {
-                case MouseButtons.Left:
-                    if (!bSelect)
-                    {
-                        start = new System.Drawing.Point((int)(e.Location.X * scale), (int)(e.Location.Y * scale)); 
-                        bSelect = true;
-                    }
-                    else
-                    {
-                        bSelect = false;
-                    }
-                    break;
-                case MouseButtons.Right:
-                    if(bSelect)
-                    {
-                        selectROI.Width = 0;
-                        bSelect = false;
-                    }
-                    break;
-                default:
-                    break;
-            }
         }
         private void pictureMain_MouseLeave(object sender, EventArgs e)
         {
-            bSelect = false;
+//            bSelect = false;
         }
         private void mnu_Edit_ClearSelect_Click(object sender, EventArgs e)
         {
@@ -346,6 +354,7 @@ namespace VisionProcessor
         public void clearROI()
         {
             end = start;
+            bSelect = false;
             updateScale();
         }
         #endregion
@@ -498,9 +507,9 @@ namespace VisionProcessor
                 else
                     s = StaticObj.mainPic;
                 dlg.setSourceMat(s);
+                    StaticObj.PushHistory(dlg.Text);
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    StaticObj.PushHistory(dlg.Text);
                     Mat d = dlg.getDestMat();
                     if (d != null)
                         d.CopyTo(s);
@@ -508,7 +517,10 @@ namespace VisionProcessor
                     return true;
                 }
                 else
+                {
+                    Rollback();
                     return false;
+                }
             }
             catch (Exception ex)
             {
@@ -535,15 +547,18 @@ namespace VisionProcessor
                 else
                     s = StaticObj.mainPic;
                 testcase.src = s;
+                StaticObj.PushHistory(testcase.TestName);
                 if (testcase.run())
                 {
-                    StaticObj.PushHistory(testcase.TestName);
                     testcase.dst.CopyTo(s);
                     refreshImage();
                     return true;
                 }
                 else
+                {
+                    Rollback();
                     return false;
+                }
             }
             catch (Exception ex)
             {
@@ -652,9 +667,11 @@ namespace VisionProcessor
             runVisionCommand(new VP_Reverse(), false);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void mnu_Vision_Affine_Click(object sender, EventArgs e)
         {
-            QGR.Utility.Splash.Destroy();
+            dlgAffineTransform dlg = new dlgAffineTransform();
+            dlg.parent = this;
+            runVisionCommand(dlg, false);
         }
 
         private void mnu_Vision_MatchTemplate_Click(object sender, EventArgs e)
