@@ -420,6 +420,16 @@ namespace VisionProcessor
             }
             return res;
         }
+        private System.Drawing.Point[] convertPointArray(OpenCvSharp.Point2f[] src)
+        {
+            System.Drawing.Point[] res = new System.Drawing.Point[src.Length];
+            for (int i = 0; i < src.Length; i++)
+            {
+                res[i].X = (int)src[i].X;
+                res[i].Y = (int)src[i].Y;
+            }
+            return res;
+        }
 
         private OpenCvSharp.Point[] convertPointArray(System.Drawing.Point[] src)
         {
@@ -674,17 +684,32 @@ namespace VisionProcessor
             runVisionCommand(dlg, false);
         }
 
-        private void mnu_Vision_MatchTemplate_Click(object sender, EventArgs e)
+        private void mnu_Vision_MatchShapes_Click(object sender, EventArgs e)
         {
-            Rect res;
+            RotatedRect res;
             dlgMatchTemplate dlg = new dlgMatchTemplate();
             if (runVisionCommand(dlg, true))
             {
                 overlayShapes.Clear();
                 double v = dlg.getResult(out res);
-                overlayShapes[0] = new Rectangle(res.X, res.Y, res.Width, res.Height);
+                overlayShapes[0] = convertPointArray(res.Points());
                 refreshOverlayListview();
                 listOverlay.Items[0].SubItems[2].Text = v.ToString("0.000");
+            }
+        }
+
+        private void mnu_Vision_MatchTemplate_Click(object sender, EventArgs e)
+        {
+            RotatedRect res;
+            dlgMatchTemplate dlg = new dlgMatchTemplate();
+            if (runVisionCommand(dlg, true))
+            {
+                overlayShapes.Clear();
+                double v = dlg.getResult(out res);
+                overlayShapes[0] = convertPointArray(res.Points());
+                refreshOverlayListview();
+                listOverlay.Items[0].SubItems[2].Text = v.ToString("0.000");
+                txtElapse.Text = string.Format("test elapse : {0} milliseconds.", (int)dlg.elapsedMilliseconds);
             }
         }
 

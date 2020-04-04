@@ -37,15 +37,26 @@ namespace VisionProcessor
         public override void runTest()
         {
             VP_TransformAffine affine = (VP_TransformAffine)testcase;
-            affine.matrix[0, 0] = double.Parse(txt_0_0.Text);
-            affine.matrix[0, 1] = double.Parse(txt_0_1.Text);
-            affine.matrix[0, 2] = double.Parse(txt_0_2.Text);
-            affine.matrix[1, 0] = double.Parse(txt_1_0.Text);
-            affine.matrix[1, 1] = double.Parse(txt_1_1.Text);
-            affine.matrix[1, 2] = double.Parse(txt_1_2.Text);
-            //affine.matrix[2, 0] = double.Parse(txt_2_0.Text);
-            //affine.matrix[2, 1] = double.Parse(txt_2_1.Text);
-            //affine.matrix[2, 2] = double.Parse(txt_2_2.Text);
+            if (tabControl1.SelectedTab == tabMatrix)
+            {
+                affine.matrix[0, 0] = double.Parse(txt_0_0.Text);
+                affine.matrix[0, 1] = double.Parse(txt_0_1.Text);
+                affine.matrix[0, 2] = double.Parse(txt_0_2.Text);
+                affine.matrix[1, 0] = double.Parse(txt_1_0.Text);
+                affine.matrix[1, 1] = double.Parse(txt_1_1.Text);
+                affine.matrix[1, 2] = double.Parse(txt_1_2.Text);
+                //affine.matrix[2, 0] = double.Parse(txt_2_0.Text);
+                //affine.matrix[2, 1] = double.Parse(txt_2_1.Text);
+                //affine.matrix[2, 2] = double.Parse(txt_2_2.Text);
+            }
+            else
+            {
+                affine.setMatrix(
+                    new OpenCvSharp.Point2f(float.Parse(txtCenterX.Text), float.Parse(txtCenterY.Text)),
+                    double.Parse(txtRotateAngle.Text),
+                    double.Parse(txtScale.Text)
+                    ); 
+            }
             testcase.run();
             btnCancel.DialogResult = DialogResult.OK;
         }

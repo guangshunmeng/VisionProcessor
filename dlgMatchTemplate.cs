@@ -49,12 +49,20 @@ namespace VisionProcessor
         {
             testcase.setValue("templ", temp);
             testcase.setValue("mode", Enum.Parse(typeof(TemplateMatchModes), listMode.SelectedItem.ToString()));
-            testcase.run();
+            if(!chkRotate.Checked)
+                testcase.run();
+            else
+            {
+                VP_MatchTemplate p = (VP_MatchTemplate)testcase;
+                double start = double.Parse(txtAngleStart.Text);
+                double end = double.Parse(txtAngleEnd.Text);
+                p.runRotate(start, end, 1.0);
+            }
         }
-        public double getResult(out OpenCvSharp.Rect location)
+        public double getResult(out OpenCvSharp.RotatedRect location)
         {
             VP_MatchTemplate m = (VP_MatchTemplate)testcase;
-            location = new Rect(m.Loc, temp.Size());
+            location = new RotatedRect(new Point2f(m.Loc.X + temp.Width/2, m.Loc.Y + temp.Height/2), new Size2f(temp.Width, temp.Height), -(float)m.Angle);
             return m.Val;
         }
     }

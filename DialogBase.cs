@@ -14,6 +14,7 @@ namespace VisionProcessor
     public partial class DialogBase : Form
     {
         public VisionTestCase testcase;
+        public double elapsedMilliseconds { get; protected set; }
         public DialogBase()
         {
             InitializeComponent();
@@ -32,7 +33,10 @@ namespace VisionProcessor
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
+            DateTime start = DateTime.Now;
             runTest();
+            TimeSpan ts = DateTime.Now - start;
+            elapsedMilliseconds = ts.TotalMilliseconds;
         }
     }
 }

@@ -112,6 +112,12 @@
     <Compile Include="dlgHoughLine.Designer.cs">
       <DependentUpon>dlgHoughLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="dlgMatchShape.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgMatchShape.Designer.cs">
+      <DependentUpon>dlgMatchShape.cs</DependentUpon>
+    </Compile>
     <Compile Include="dlgMatchTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dlgHoughLine.resx">
       <DependentUpon>dlgHoughLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMatchShape.resx">
+      <DependentUpon>dlgMatchShape.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dlgMatchTemplate.resx">
       <DependentUpon>dlgMatchTemplate.cs</DependentUpon>

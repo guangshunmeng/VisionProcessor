@@ -34,16 +34,21 @@
             this.txtImage = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.picTempl = new System.Windows.Forms.PictureBox();
+            this.chkRotate = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtAngleStart = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtAngleEnd = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picTempl)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(287, 324);
+            this.btnCancel.Location = new System.Drawing.Point(287, 378);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(86, 324);
+            this.btnOK.Location = new System.Drawing.Point(86, 378);
             // 
             // listMode
             // 
@@ -106,11 +111,60 @@
             this.picTempl.TabIndex = 32;
             this.picTempl.TabStop = false;
             // 
+            // chkRotate
+            // 
+            this.chkRotate.AutoSize = true;
+            this.chkRotate.Location = new System.Drawing.Point(40, 325);
+            this.chkRotate.Name = "chkRotate";
+            this.chkRotate.Size = new System.Drawing.Size(56, 24);
+            this.chkRotate.TabIndex = 33;
+            this.chkRotate.Text = "旋转";
+            this.chkRotate.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(102, 326);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "起始角度";
+            // 
+            // txtAngleStart
+            // 
+            this.txtAngleStart.Location = new System.Drawing.Point(173, 323);
+            this.txtAngleStart.Name = "txtAngleStart";
+            this.txtAngleStart.Size = new System.Drawing.Size(68, 26);
+            this.txtAngleStart.TabIndex = 35;
+            this.txtAngleStart.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(247, 325);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "终止角度";
+            // 
+            // txtAngleEnd
+            // 
+            this.txtAngleEnd.Location = new System.Drawing.Point(318, 323);
+            this.txtAngleEnd.Name = "txtAngleEnd";
+            this.txtAngleEnd.Size = new System.Drawing.Size(69, 26);
+            this.txtAngleEnd.TabIndex = 35;
+            this.txtAngleEnd.Text = "0";
+            // 
             // dlgMatchTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 394);
+            this.ClientSize = new System.Drawing.Size(475, 430);
+            this.Controls.Add(this.txtAngleEnd);
+            this.Controls.Add(this.txtAngleStart);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.chkRotate);
             this.Controls.Add(this.picTempl);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtImage);
@@ -128,6 +182,11 @@
             this.Controls.SetChildIndex(this.txtImage, 0);
             this.Controls.SetChildIndex(this.btnBrowse, 0);
             this.Controls.SetChildIndex(this.picTempl, 0);
+            this.Controls.SetChildIndex(this.chkRotate, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.txtAngleStart, 0);
+            this.Controls.SetChildIndex(this.txtAngleEnd, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picTempl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -142,5 +201,10 @@
         private System.Windows.Forms.TextBox txtImage;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.PictureBox picTempl;
+        private System.Windows.Forms.CheckBox chkRotate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtAngleStart;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtAngleEnd;
     }
 }
