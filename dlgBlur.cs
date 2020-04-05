@@ -49,9 +49,6 @@ namespace VisionProcessor
 
             txtMKSize.Text = "7";
         }
-        private void btnOK_Click(object sender, System.EventArgs e)
-        {
-        }
         public override void runTest()
         {
             switch(tab_Blur.SelectedTab.Text)

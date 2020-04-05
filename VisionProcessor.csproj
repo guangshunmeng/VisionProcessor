@@ -100,6 +100,12 @@
     <Compile Include="dlgContour.Designer.cs">
       <DependentUpon>dlgContour.cs</DependentUpon>
     </Compile>
+    <Compile Include="dlgDenoise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgDenoise.Designer.cs">
+      <DependentUpon>dlgDenoise.cs</DependentUpon>
+    </Compile>
     <Compile Include="dlgHoughCircle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,7 @@
     <Compile Include="VP_Blur.cs" />
     <Compile Include="VP_Canny.cs" />
     <Compile Include="VP_Contour.cs" />
+    <Compile Include="VP_Denoise.cs" />
     <Compile Include="VP_EqualizeHist.cs" />
     <Compile Include="VP_HoughCircle.cs" />
     <Compile Include="VP_HoughLine.cs" />
@@ -179,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dlgContour.resx">
       <DependentUpon>dlgContour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgDenoise.resx">
+      <DependentUpon>dlgDenoise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dlgHoughCircle.resx">
       <DependentUpon>dlgHoughCircle.cs</DependentUpon>

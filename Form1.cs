@@ -713,6 +713,12 @@ namespace VisionProcessor
             }
         }
 
+        private void mnu_Vision_Denoise_Click(object sender, EventArgs e)
+        {
+            dlgDenoise dlg = new dlgDenoise();
+            runVisionCommand(dlg, false);
+        }
+
         #endregion
     }
 }
