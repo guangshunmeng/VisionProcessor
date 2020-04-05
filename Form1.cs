@@ -99,6 +99,17 @@ namespace VisionProcessor
                 e.Graphics.DrawRectangle(roiPen, selectROI.X, selectROI.Y, selectROI.Width, selectROI.Height);
             }
         }
+        private void listOverlay_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            if (e.Column == 0 && listOverlay.Items.Count > 0)
+            {
+                bool b = listOverlay.Items[0].Checked;
+                foreach (ListViewItem it in listOverlay.Items)
+                {
+                    it.Checked = !b;
+                }
+            }
+        }
         private void listOverlay_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             pictureMain.Invalidate();
@@ -279,10 +290,14 @@ namespace VisionProcessor
         private void updateScale()
         {
             scale = (double)StaticObj.mainPic.Width / panelImage.Width;
-            selectROI.X = (int)(Math.Min(start.X, end.X)/scale);
-            selectROI.Y = (int)(Math.Min(start.Y, end.Y)/scale);
-            selectROI.Width = (int)(Math.Abs(start.X - end.X)/scale);
-            selectROI.Height = (int)(Math.Abs(start.Y - end.Y)/scale);
+            //selectROI.X = (int)(Math.Min(start.X, end.X)/scale);
+            //selectROI.Y = (int)(Math.Min(start.Y, end.Y)/scale);
+            //selectROI.Width = (int)(Math.Abs(start.X - end.X)/scale);
+            //selectROI.Height = (int)(Math.Abs(start.Y - end.Y)/scale);
+            selectROI.X = (int)(Math.Min(start.X, end.X));
+            selectROI.Y = (int)(Math.Min(start.Y, end.Y));
+            selectROI.Width = (int)(Math.Abs(start.X - end.X));
+            selectROI.Height = (int)(Math.Abs(start.Y - end.Y)); 
             pictureMain.Invalidate();
         }
         #endregion
@@ -311,6 +326,7 @@ namespace VisionProcessor
                     {
                         selectROI.Width = 0;
                         bSelect = false;
+                        pictureMain.Invalidate();
                     }
                     break;
                 default:
@@ -400,10 +416,10 @@ namespace VisionProcessor
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 Mat s = new Mat(StaticObj.mainPic, new OpenCvSharp.Rect(
-                        (int)(selectROI.X * scale),
-                        (int)(selectROI.Y * scale),
-                        (int)(selectROI.Width * scale),
-                        (int)(selectROI.Height * scale)
+                        (int)(selectROI.X),
+                        (int)(selectROI.Y),
+                        (int)(selectROI.Width),
+                        (int)(selectROI.Height)
                         ));
                 s.ImWrite(dlg.FileName);
             }
@@ -667,6 +683,11 @@ namespace VisionProcessor
                 for(int i = 0;i<res.Length;i++)
                 {
                     CircleSegment l = res[i];
+                    if (selectROI.Width > 0)
+                    {
+                        l.Center.X += selectROI.X;
+                        l.Center.Y += selectROI.Y;
+                    }
                     overlayShapes[i] = l;
                 }
             }
@@ -712,7 +733,6 @@ namespace VisionProcessor
                 txtElapse.Text = string.Format("test elapse : {0} milliseconds.", (int)dlg.elapsedMilliseconds);
             }
         }
-
         private void mnu_Vision_Denoise_Click(object sender, EventArgs e)
         {
             dlgDenoise dlg = new dlgDenoise();

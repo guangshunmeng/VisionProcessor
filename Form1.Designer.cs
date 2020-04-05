@@ -62,6 +62,7 @@
             this.mnu_Vision_Normalize = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Vision_Blur = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Vision_Reverse = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_Vision_Denoise = new System.Windows.Forms.ToolStripMenuItem();
             this.几何变换ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Vision_Affine = new System.Windows.Forms.ToolStripMenuItem();
             this.图像分割ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,7 +95,6 @@
             this.propValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelImage = new System.Windows.Forms.Panel();
             this.pictureMain = new System.Windows.Forms.PictureBox();
-            this.mnu_Vision_Denoise = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -119,8 +119,7 @@
             this.txtElapse});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1772, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1181, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -291,30 +290,37 @@
             // mnu_Vision_EqualizeHist
             // 
             this.mnu_Vision_EqualizeHist.Name = "mnu_Vision_EqualizeHist";
-            this.mnu_Vision_EqualizeHist.Size = new System.Drawing.Size(180, 22);
+            this.mnu_Vision_EqualizeHist.Size = new System.Drawing.Size(136, 22);
             this.mnu_Vision_EqualizeHist.Text = "直方图均衡";
             this.mnu_Vision_EqualizeHist.Click += new System.EventHandler(this.mnu_Vision_EqualizeHist_Click);
             // 
             // mnu_Vision_Normalize
             // 
             this.mnu_Vision_Normalize.Name = "mnu_Vision_Normalize";
-            this.mnu_Vision_Normalize.Size = new System.Drawing.Size(180, 22);
+            this.mnu_Vision_Normalize.Size = new System.Drawing.Size(136, 22);
             this.mnu_Vision_Normalize.Text = "归一化";
             this.mnu_Vision_Normalize.Click += new System.EventHandler(this.mnu_Vision_Normalize_Click);
             // 
             // mnu_Vision_Blur
             // 
             this.mnu_Vision_Blur.Name = "mnu_Vision_Blur";
-            this.mnu_Vision_Blur.Size = new System.Drawing.Size(180, 22);
+            this.mnu_Vision_Blur.Size = new System.Drawing.Size(136, 22);
             this.mnu_Vision_Blur.Text = "滤波";
             this.mnu_Vision_Blur.Click += new System.EventHandler(this.mnu_Vision_Blur_Click);
             // 
             // mnu_Vision_Reverse
             // 
             this.mnu_Vision_Reverse.Name = "mnu_Vision_Reverse";
-            this.mnu_Vision_Reverse.Size = new System.Drawing.Size(180, 22);
+            this.mnu_Vision_Reverse.Size = new System.Drawing.Size(136, 22);
             this.mnu_Vision_Reverse.Text = "反相";
             this.mnu_Vision_Reverse.Click += new System.EventHandler(this.mnu_Vision_Reverse_Click);
+            // 
+            // mnu_Vision_Denoise
+            // 
+            this.mnu_Vision_Denoise.Name = "mnu_Vision_Denoise";
+            this.mnu_Vision_Denoise.Size = new System.Drawing.Size(136, 22);
+            this.mnu_Vision_Denoise.Text = "去噪";
+            this.mnu_Vision_Denoise.Click += new System.EventHandler(this.mnu_Vision_Denoise_Click);
             // 
             // 几何变换ToolStripMenuItem
             // 
@@ -420,14 +426,14 @@
             // mnu_Vision_HoughLine
             // 
             this.mnu_Vision_HoughLine.Name = "mnu_Vision_HoughLine";
-            this.mnu_Vision_HoughLine.Size = new System.Drawing.Size(100, 22);
+            this.mnu_Vision_HoughLine.Size = new System.Drawing.Size(180, 22);
             this.mnu_Vision_HoughLine.Text = "直线";
             this.mnu_Vision_HoughLine.Click += new System.EventHandler(this.mnu_Vision_HoughLine_Click);
             // 
             // mnu_Vision_HoughCircle
             // 
             this.mnu_Vision_HoughCircle.Name = "mnu_Vision_HoughCircle";
-            this.mnu_Vision_HoughCircle.Size = new System.Drawing.Size(100, 22);
+            this.mnu_Vision_HoughCircle.Size = new System.Drawing.Size(180, 22);
             this.mnu_Vision_HoughCircle.Text = "圆";
             this.mnu_Vision_HoughCircle.Click += new System.EventHandler(this.mnu_Vision_HoughCircle_Click);
             // 
@@ -465,21 +471,20 @@
             // 
             this.mnu_txtCursorValue.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.mnu_txtCursorValue.Name = "mnu_txtCursorValue";
-            this.mnu_txtCursorValue.Size = new System.Drawing.Size(148, 23);
+            this.mnu_txtCursorValue.Size = new System.Drawing.Size(100, 23);
             // 
             // txtElapse
             // 
             this.txtElapse.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.txtElapse.Name = "txtElapse";
-            this.txtElapse.Size = new System.Drawing.Size(298, 23);
+            this.txtElapse.Size = new System.Drawing.Size(200, 23);
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 29);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 27);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -491,16 +496,14 @@
             this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.Controls.Add(this.panelImage);
             this.splitContainer1.Panel2.SizeChanged += new System.EventHandler(this.splitContainer1_Panel2_SizeChanged);
-            this.splitContainer1.Size = new System.Drawing.Size(1772, 1032);
+            this.splitContainer1.Size = new System.Drawing.Size(1181, 680);
             this.splitContainer1.SplitterDistance = 202;
-            this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
             // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -511,9 +514,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.lstProperties);
-            this.splitContainer2.Size = new System.Drawing.Size(202, 1032);
-            this.splitContainer2.SplitterDistance = 847;
-            this.splitContainer2.SplitterWidth = 6;
+            this.splitContainer2.Size = new System.Drawing.Size(202, 680);
+            this.splitContainer2.SplitterDistance = 558;
             this.splitContainer2.TabIndex = 0;
             // 
             // listOverlay
@@ -524,15 +526,15 @@
             this.colType,
             this.colData});
             this.listOverlay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listOverlay.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listOverlay.FullRowSelect = true;
             this.listOverlay.HideSelection = false;
             this.listOverlay.Location = new System.Drawing.Point(0, 0);
-            this.listOverlay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listOverlay.Name = "listOverlay";
-            this.listOverlay.Size = new System.Drawing.Size(202, 847);
+            this.listOverlay.Size = new System.Drawing.Size(202, 558);
             this.listOverlay.TabIndex = 0;
             this.listOverlay.UseCompatibleStateImageBehavior = false;
             this.listOverlay.View = System.Windows.Forms.View.Details;
+            this.listOverlay.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listOverlay_ColumnClick);
             this.listOverlay.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.listOverlay_ItemChecked);
             // 
             // colSN
@@ -561,9 +563,8 @@
             listViewItem2,
             listViewItem3});
             this.lstProperties.Location = new System.Drawing.Point(0, 0);
-            this.lstProperties.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstProperties.Name = "lstProperties";
-            this.lstProperties.Size = new System.Drawing.Size(202, 179);
+            this.lstProperties.Size = new System.Drawing.Size(202, 118);
             this.lstProperties.TabIndex = 0;
             this.lstProperties.UseCompatibleStateImageBehavior = false;
             this.lstProperties.View = System.Windows.Forms.View.Details;
@@ -580,10 +581,9 @@
             // panelImage
             // 
             this.panelImage.Controls.Add(this.pictureMain);
-            this.panelImage.Location = new System.Drawing.Point(117, 146);
-            this.panelImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelImage.Location = new System.Drawing.Point(78, 97);
             this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(1208, 784);
+            this.panelImage.Size = new System.Drawing.Size(805, 523);
             this.panelImage.TabIndex = 0;
             this.panelImage.SizeChanged += new System.EventHandler(this.panelImage_SizeChanged);
             // 
@@ -591,9 +591,8 @@
             // 
             this.pictureMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureMain.Location = new System.Drawing.Point(0, 0);
-            this.pictureMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureMain.Name = "pictureMain";
-            this.pictureMain.Size = new System.Drawing.Size(1208, 784);
+            this.pictureMain.Size = new System.Drawing.Size(805, 523);
             this.pictureMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureMain.TabIndex = 1;
             this.pictureMain.TabStop = false;
@@ -603,22 +602,14 @@
             this.pictureMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureMain_MouseMove);
             this.pictureMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureMain_MouseUp);
             // 
-            // mnu_Vision_Denoise
-            // 
-            this.mnu_Vision_Denoise.Name = "mnu_Vision_Denoise";
-            this.mnu_Vision_Denoise.Size = new System.Drawing.Size(180, 22);
-            this.mnu_Vision_Denoise.Text = "去噪";
-            this.mnu_Vision_Denoise.Click += new System.EventHandler(this.mnu_Vision_Denoise_Click);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1772, 1061);
+            this.ClientSize = new System.Drawing.Size(1181, 707);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "图像处理工具";
             this.Load += new System.EventHandler(this.Form1_Load);
