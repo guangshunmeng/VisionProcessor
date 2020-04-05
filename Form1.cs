@@ -524,11 +524,17 @@ namespace VisionProcessor
                 if (selectROI.Width > 0)
                 {
                     s = new Mat(StaticObj.mainPic, new OpenCvSharp.Rect(
-                        (int)(selectROI.X * scale),
-                        (int)(selectROI.Y * scale),
-                        (int)(selectROI.Width * scale),
-                        (int)(selectROI.Height * scale)
+                        (int)(selectROI.X),
+                        (int)(selectROI.Y),
+                        (int)(selectROI.Width),
+                        (int)(selectROI.Height)
                         ));
+                    //s = new Mat(StaticObj.mainPic, new OpenCvSharp.Rect(
+                    //    (int)(selectROI.X * scale),
+                    //    (int)(selectROI.Y * scale),
+                    //    (int)(selectROI.Width * scale),
+                    //    (int)(selectROI.Height * scale)
+                    //    ));
                 }
                 else
                     s = StaticObj.mainPic;
